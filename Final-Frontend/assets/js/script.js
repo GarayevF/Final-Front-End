@@ -1,11 +1,22 @@
 $(document).ready(function() {
-    $('.owl-carousel').owlCarousel({
+    
+    $('.owl-one').owlCarousel({
         loop:true,
         margin:10,
         nav:false,
-        items: 1
+        items: 1,
+        autoplay: true
     })
-    $(document).on('click', '.sub-menu-link, .btn-prev, .menu-link, .menu-btn, .nav-list, .category-item', function() {
+
+    $('.owl-two').owlCarousel({
+        loop:true,
+        margin:10,
+        nav:false,
+        items: 6,
+        autoplay: true
+    })
+
+    $(document).on('click', '.sub-menu-link, .btn-prev, .menu-link, .menu-btn, .nav-list, .category-item, .color, .credit-item', function() {
         if ($(this).hasClass('sub-menu-link')){
             $(this).children(".sub-content").toggleClass('d-none')
             $(this).children(".link-wrapper").children(".sub-menu")
@@ -29,8 +40,32 @@ $(document).ready(function() {
         }
 
         if ($(this).hasClass('category-item')){
-            $(this).children(".category-content").toggleClass('active')
-            $(this).children(".category-content").toggleClass('active-drop')
+            
+            if(!$(this).hasClass("active")){
+                $(".category-item").removeClass('active')
+                $(".category-content").removeClass('active-drop')
+                $(this).addClass('active')
+                $(this).children(".category-content").addClass('active-drop')
+            }else{
+                $(".category-item").removeClass('active')
+                $(".category-content").removeClass('active-drop')
+                
+            }
+            
+        }
+
+        if ($(this).hasClass('color')){
+            if(!$(this).hasClass("active")){
+                $(this).siblings(".color").removeClass("active")
+                $(this).addClass('active')
+            }
+        }
+
+        if ($(this).hasClass('credit-item')){
+            if(!$(this).hasClass("selected-credit")){
+                $(this).siblings(".credit-item").removeClass("selected-credit")
+                $(this).addClass('selected-credit')
+            }
         }
         
     })
