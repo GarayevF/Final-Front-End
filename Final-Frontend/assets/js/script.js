@@ -33,6 +33,21 @@ $(document).ready(function() {
         dots: true,
     })
 
+    let dropbtn = document.querySelector('.main-detail .item-info .container .content .item-content .right .credit-calculator .wrapper .li-body .price .dropdown .dropbtn');
+    let dropbtnicon = document.querySelector('.main-detail .item-info .container .content .item-content .right .credit-calculator .wrapper .li-body .price .dropdown .dropbtn i');
+    let dropdown = document.querySelector("#credit-dropdown")
+
+    dropbtn.addEventListener('click', function(){
+        dropdown.classList.toggle("show");
+        if (dropdown.classList.contains('show')) {
+            dropbtnicon.style.transform = "rotate(-90deg)"
+            dropdown.style.height = dropdown.scrollHeight + 'px';
+        }else{
+            dropbtnicon.style.transform = "rotate(0deg)"
+            dropdown.style.height = '0px';
+        }
+    })
+
     window.addEventListener('resize', function(e){
         let sidebar_mob = document.querySelector('.main-shop .container .content');
         if(window.innerWidth > 991.8){
