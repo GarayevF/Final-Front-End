@@ -16,7 +16,31 @@ $(document).ready(function() {
         autoplay: true
     })
 
-    $(document).on('click', '.sub-menu-link, .btn-prev, .menu-link, .menu-btn, .nav-list, .category-item, .color, .credit-item', function() {
+    $('.owl-three').owlCarousel({
+        loop:true,
+        margin:10,
+        nav:false,
+        items: 1,
+        autoplay: true
+    })
+
+    $('.product-detail-slider').owlCarousel({
+        loop:true,
+        margin:10,
+        nav:false,
+        items: 1,
+        autoplay: false,
+        dots: true,
+    })
+
+    window.addEventListener('resize', function(e){
+        let sidebar_mob = document.querySelector('.main-shop .container .content');
+        if(window.innerWidth > 991.8){
+            sidebar_mob.classList.remove('sidebar-active')
+        }
+      });
+
+    $(document).on('click', '.sub-menu-link, .btn-prev, .menu-link, .menu-btn, .nav-list, .category-item, .color, .credit-item, .filter-button, .filter-btn-mobile', function() {
         if ($(this).hasClass('sub-menu-link')){
             $(this).children(".sub-content").toggleClass('d-none')
             $(this).children(".link-wrapper").children(".sub-menu")
@@ -37,6 +61,16 @@ $(document).ready(function() {
 
         if ($(this).hasClass('nav-list')){
             $(this).children(".ft-menu-content").toggleClass('d-block')
+        }
+        
+        if ($(this).hasClass('filter-button')){
+            $(this).toggleClass('active')
+            $(this).parent().children(".drop-content").toggleClass('active-content')
+            $(this).children("i").toggleClass('opened')
+        }
+
+        if ($(this).hasClass('filter-btn-mobile')){
+            $(this).parent().toggleClass('sidebar-active')
         }
 
         if ($(this).hasClass('category-item')){
@@ -139,4 +173,52 @@ $(document).ready(function() {
             }
         }
     });
+
+    const rangeInput = document.querySelectorAll(".main-shop .left .pricefilter .content-box .range-input input"),
+    priceInput = document.querySelectorAll(".main-shop .left .pricefilter .content-box .price-input input"),
+    range = document.querySelector(".main-shop .left .pricefilter .content-box .slider .progress");
+    let priceGap = 500;
+
+    priceInput.forEach(input =>{
+        input.addEventListener("input", e =>{
+            let minPrice = parseInt(priceInput[0].value);
+            let maxPrice = parseInt(priceInput[1].value);
+            
+            if((maxPrice - minPrice >= priceGap) && maxPrice <= rangeInput[1].max){
+                if(e.target.className === "input-min"){
+                    rangeInput[0].value = minPrice;
+                    range.style.left = ((minPrice / rangeInput[0].max) * 100) + "%";
+                }else{
+                    rangeInput[1].value = maxPrice;
+                    range.style.right = 100 - (maxPrice / rangeInput[1].max) * 100 + "%";
+                }
+            }
+        });
+    });
+
+    rangeInput.forEach(input =>{
+        input.addEventListener("input", e =>{
+            let minVal = parseInt(rangeInput[0].value);
+            let maxVal = parseInt(rangeInput[1].value);
+
+            if((maxVal - minVal) < priceGap){
+                if(e.target.className === "range-min"){
+                    rangeInput[0].value = maxVal - priceGap;
+                    priceInput[0].value = maxVal - priceGap;
+                    range.style.left = (((maxVal - priceGap) / rangeInput[0].max) * 100) + "%";
+                }else{
+                    rangeInput[1].value = minVal + priceGap;
+                    priceInput[1].value = minVal + priceGap;
+                    range.style.right = 100 - ((minVal + priceGap) / rangeInput[1].max) * 100 + "%";
+                }
+            }else{
+                priceInput[0].value = minVal;
+                priceInput[1].value = maxVal;
+                range.style.left = ((minVal / rangeInput[0].max) * 100) + "%";
+                range.style.right = 100 - (maxVal / rangeInput[1].max) * 100 + "%";
+            }
+        });
+    });
+
+    
 })
