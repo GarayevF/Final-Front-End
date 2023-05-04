@@ -1,5 +1,21 @@
 $(document).ready(function() {
+    if (window.location.pathname.split('/')[1].toLowerCase() == 'profile'){
+        $('#phone').inputmask("\\+\\9\\9\\4 (99) 999 99 99", { "escapeChar": "\\" });
+        $('#phone2').inputmask("\\+\\9\\9\\4 (99) 999 99 99", { "escapeChar": "\\" });
+    }
     
+    if (window.location.pathname.split('/')[1].toLowerCase() == 'checkout'){
+        $('#phone3').inputmask("\\+\\9\\9\\4 (99) 999 99 99", { "escapeChar": "\\" });
+    }
+
+    $('.owl-category-slider').owlCarousel({
+        loop:false,
+        margin:10,
+        nav:false,
+        items: 8,
+        autoplay: false
+    })
+
     $('.owl-one').owlCarousel({
         loop:true,
         margin:10,
@@ -11,6 +27,10 @@ $(document).ready(function() {
     $('.owl-two').owlCarousel({
         loop:true,
         margin:10,
+        autoplay: !0,
+                        slideTransition: "linear",
+                        autoplayTimeout: 4040,
+                        autoplaySpeed: 4e3,
         nav:false,
         items: 6,
         autoplay: true
@@ -21,7 +41,35 @@ $(document).ready(function() {
         margin:10,
         nav:false,
         items: 1,
-        autoplay: true
+        autoplay: true,
+    })
+
+    $('.owl-compare').owlCarousel({
+        loop:true,
+        margin:10,
+        nav:true,
+        navText: ["<img src='/assets/images/more.png'>","<img src='/assets/images/more.png'>"],
+        items: 3,
+        autoplay: true,
+        responsive : {
+            0 : {
+                items : 1
+            },
+            767.98 : {
+                items : 2
+            },
+            991.98 : {
+                items : 3
+            }
+        }
+    })
+
+    $('.owl-affiliate').owlCarousel({
+        loop:true,
+        nav:true,
+        navText: ["","<img src='/assets/images/more.png'>"],
+        items: 1,
+        autoplay: false
     })
 
     $('.product-detail-slider').owlCarousel({
@@ -33,21 +81,6 @@ $(document).ready(function() {
         dots: true,
     })
 
-    let dropbtn = document.querySelector('.main-detail .item-info .container .content .item-content .right .credit-calculator .wrapper .li-body .price .dropdown .dropbtn');
-    let dropbtnicon = document.querySelector('.main-detail .item-info .container .content .item-content .right .credit-calculator .wrapper .li-body .price .dropdown .dropbtn i');
-    let dropdown = document.querySelector("#credit-dropdown")
-
-    dropbtn.addEventListener('click', function(){
-        dropdown.classList.toggle("show");
-        if (dropdown.classList.contains('show')) {
-            dropbtnicon.style.transform = "rotate(-90deg)"
-            dropdown.style.height = dropdown.scrollHeight + 'px';
-        }else{
-            dropbtnicon.style.transform = "rotate(0deg)"
-            dropdown.style.height = '0px';
-        }
-    })
-
     window.addEventListener('resize', function(e){
         let sidebar_mob = document.querySelector('.main-shop .container .content');
         if(window.innerWidth > 991.8){
@@ -55,11 +88,26 @@ $(document).ready(function() {
         }
       });
 
-    $(document).on('click', '.sub-menu-link, .btn-prev, .menu-link, .menu-btn, .nav-list, .category-item, .color, .credit-item, .filter-button, .filter-btn-mobile', function() {
+    $(document).on('click', '.sub-menu-link, .btn-prev, .menu-link, .menu-btn, .nav-list, .category-item, .color, .credit-item, .filter-button, .filter-btn-mobile, .dropbtn, .tab-btn, .product-btn', function() {
         if ($(this).hasClass('sub-menu-link')){
             $(this).children(".sub-content").toggleClass('d-none')
             $(this).children(".link-wrapper").children(".sub-menu")
             .children(".arrow-div").children("i").toggleClass('opened')
+        }
+
+        if ($(this).hasClass('dropbtn')){
+            let dropbtn = document.querySelector('.main-detail .item-info .container .content .item-content .right .credit-calculator .wrapper .li-body .price .dropdown .dropbtn');
+            let dropbtnicon = document.querySelector('.main-detail .item-info .container .content .item-content .right .credit-calculator .wrapper .li-body .price .dropdown .dropbtn i');
+            let dropdown = document.querySelector("#credit-dropdown")
+
+            dropdown.classList.toggle("show");
+            if (dropdown.classList.contains('show')) {
+                dropbtnicon.style.transform = "rotate(-90deg)"
+                dropdown.style.height = dropdown.scrollHeight + 'px';
+            }else{
+                dropbtnicon.style.transform = "rotate(0deg)"
+                dropdown.style.height = '0px';
+            }
         }
 
         if ($(this).hasClass('btn-prev')){
@@ -114,6 +162,30 @@ $(document).ready(function() {
             if(!$(this).hasClass("selected-credit")){
                 $(this).siblings(".credit-item").removeClass("selected-credit")
                 $(this).addClass('selected-credit')
+            }
+        }
+
+        if ($(this).hasClass('tab-btn')){
+            if(!$(this).hasClass('active')){
+                $('.tab-btn').removeClass('active')
+                $(this).addClass('active')
+
+                let a = $(this).attr('data-origin')
+                $('.tab-layout').removeClass('active')
+
+                $(`[data-target="${a}"]`).addClass('active')
+            }
+        }
+
+        if ($(this).hasClass('product-btn')){
+            if(!$(this).hasClass('active')){
+                $('.product-btn').removeClass('active')
+                $(this).addClass('active')
+
+                let a = $(this).attr('data-orgn')
+                $('.product-layout').removeClass('active')
+
+                $(`[data-trgt="${a}"]`).addClass('active')
             }
         }
         
