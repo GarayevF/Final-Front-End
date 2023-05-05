@@ -1319,6 +1319,9 @@ header .header2 .container .header-bottom-m .mobile-menu .menu-list .menu-item .
   justify-content: center;
   cursor: pointer;
   padding: 20px 0 !important;
+  outline: none;
+  border: none;
+  width: 100%;
 }
 .main-home .product-types-boxes .container .row .col-lg-3 .type-box .type-box-content {
   display: flex;
@@ -1351,6 +1354,12 @@ header .header2 .container .header-bottom-m .mobile-menu .menu-list .menu-item .
 .main-home .product-types-boxes .container .row .col-lg-3 .type-box:hover .type-box-content span {
   color: #307fe2;
   transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.main-home .active {
+  display: block !important;
+}
+.main-home .products-main-div {
+  display: none;
 }
 .main-home .products-main-div .container .row .col-lg-3 {
   margin-top: 24px;

@@ -82,13 +82,15 @@ $(document).ready(function() {
     })
 
     window.addEventListener('resize', function(e){
-        let sidebar_mob = document.querySelector('.main-shop .container .content');
-        if(window.innerWidth > 991.8){
-            sidebar_mob.classList.remove('sidebar-active')
+        if (window.location.pathname.split('/')[1].toLowerCase() == 'shop'){
+            let sidebar_mob = document.querySelector('.main-shop .container .content');
+            if(window.innerWidth > 991.8){
+                sidebar_mob.removeClass('sidebar-active')
+            }
         }
       });
 
-    $(document).on('click', '.sub-menu-link, .btn-prev, .menu-link, .menu-btn, .nav-list, .category-item, .color, .credit-item, .filter-button, .filter-btn-mobile, .dropbtn, .tab-btn, .product-btn', function() {
+    $(document).on('click', '.sub-menu-link, .btn-prev, .menu-link, .menu-btn, .nav-list, .category-item, .color, .credit-item, .filter-button, .filter-btn-mobile, .dropbtn, .tab-btn, .product-btn, .type-box', function() {
         if ($(this).hasClass('sub-menu-link')){
             $(this).children(".sub-content").toggleClass('d-none')
             $(this).children(".link-wrapper").children(".sub-menu")
@@ -172,6 +174,18 @@ $(document).ready(function() {
 
                 let a = $(this).attr('data-origin')
                 $('.tab-layout').removeClass('active')
+
+                $(`[data-target="${a}"]`).addClass('active')
+            }
+        }
+
+        if ($(this).hasClass('type-box')){
+            if(!$(this).hasClass('selected-box')){
+                $('.type-box').removeClass('selected-box')
+                $(this).addClass('selected-box')
+
+                let a = $(this).attr('data-origin')
+                $('.products-main-div').removeClass('active')
 
                 $(`[data-target="${a}"]`).addClass('active')
             }

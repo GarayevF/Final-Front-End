@@ -1216,6 +1216,9 @@ header{
                         justify-content: center;
                         cursor: pointer;
                         padding: 20px 0 !important;
+                        outline: none;
+                        border: none;
+                        width: 100%;
                         .type-box-content{
                             display: flex;
                             flex-direction: column;
@@ -1256,7 +1259,11 @@ header{
         }
     }
 
+    .active{
+        display: block !important;
+    }
     .products-main-div{
+        display: none;
         .container{
             .row{
                 .col-lg-3{
