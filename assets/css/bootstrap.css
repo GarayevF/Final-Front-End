@@ -1390,6 +1390,10 @@ progress {
     flex: 0 0 auto;
     width: 25%;
   }
+  .col-lg-3-5{
+    flex: 0 0 auto;
+    width: 30.16666667%;
+  }
   .col-lg-4 {
     flex: 0 0 auto;
     width: 33.33333333%;
@@ -1409,6 +1413,10 @@ progress {
   .col-lg-8 {
     flex: 0 0 auto;
     width: 66.66666667%;
+  }
+  .col-lg-8-5 {
+    flex: 0 0 auto;
+    width: 69.83333333%;
   }
   .col-lg-9 {
     flex: 0 0 auto;
@@ -1559,9 +1567,17 @@ progress {
     flex: 0 0 auto;
     width: 25%;
   }
+  .col-xl-3-5{
+    flex: 0 0 auto;
+    width: 30.16666667%;
+  }
   .col-xl-4 {
     flex: 0 0 auto;
     width: 33.33333333%;
+  }
+  .col-xl-4-5 {
+    flex: 0 0 auto;
+    width: 37.5%;
   }
   .col-xl-5 {
     flex: 0 0 auto;
@@ -1578,6 +1594,10 @@ progress {
   .col-xl-8 {
     flex: 0 0 auto;
     width: 66.66666667%;
+  }
+  .col-xl-8-5 {
+    flex: 0 0 auto;
+    width: 69.83333333%;
   }
   .col-xl-9 {
     flex: 0 0 auto;
@@ -1728,6 +1748,10 @@ progress {
     flex: 0 0 auto;
     width: 25%;
   }
+  .col-xxl-3-5{
+    flex: 0 0 auto;
+    width: 30.16666667%;
+  }
   .col-xxl-4 {
     flex: 0 0 auto;
     width: 33.33333333%;
@@ -1747,6 +1771,10 @@ progress {
   .col-xxl-8 {
     flex: 0 0 auto;
     width: 66.66666667%;
+  }
+  .col-xxl-8-5 {
+    flex: 0 0 auto;
+    width: 69.83333333%;
   }
   .col-xxl-9 {
     flex: 0 0 auto;
