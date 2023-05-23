@@ -1,11 +1,37 @@
 $(document).ready(function() {
-    if (window.location.pathname.split('/')[1].toLowerCase() == 'profile'){
+    var pathParts = window.location.pathname.split('/')
+    var thirdPart = pathParts.length >=3
+
+    
+    if((thirdPart && window.location.pathname.split('/')[2].toLowerCase() == 'profile')){
         $('#phone').inputmask("\\+\\9\\9\\4 (99) 999 99 99", { "escapeChar": "\\" });
         $('#phone2').inputmask("\\+\\9\\9\\4 (99) 999 99 99", { "escapeChar": "\\" });
     }
     
-    if (window.location.pathname.split('/')[1].toLowerCase() == 'checkout'){
+    if((thirdPart && window.location.pathname.split('/')[2].toLowerCase() == 'checkout')){
         $('#phone3').inputmask("\\+\\9\\9\\4 (99) 999 99 99", { "escapeChar": "\\" });
+    }
+
+    if((thirdPart && window.location.pathname.split('/')[1].toLowerCase() == 'product') &&
+    (thirdPart && window.location.pathname.split('/')[2].toLowerCase() == 'detail')){
+        $('.buy-taksit-btn').on('click', function() {
+            $('.modal-dialog').addClass('d-none')
+        })
+
+        $('.close-modal').on('click', function() {
+            $('.modal-dialog').removeClass('d-none')
+        })
+    }
+
+    if((thirdPart && window.location.pathname.split('/')[1].toLowerCase() == 'product-detail')){
+        
+        $('.buy-taksit-btn').on('click', function() {
+            $('.modal-dialog').addClass('d-none')
+        })
+
+        $('.close-modal').on('click', function() {
+            $('.modal-dialog').removeClass('d-none')
+        })
     }
 
     $('.owl-category-slider').owlCarousel({
@@ -205,9 +231,9 @@ $(document).ready(function() {
         
     })
 
-    $('#gotoregister').click(function(e){
-        e.preventDefault();
-    })
+    // $('#gotoregister').click(function(e){
+    //     e.preventDefault();
+    // })
 
 
     $(window).click(function(e) {
