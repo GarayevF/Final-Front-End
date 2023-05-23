@@ -1203,6 +1203,9 @@ header .header2 .container .header-bottom-m .mobile-menu .menu-list .menu-item .
   transition: all 0.3s;
   z-index: 9;
 }
+.main-home .main-content .container .row .left .main-category-list .active .category-title i, .main-home .main-content .container .row .left .main-category-list .active .category-title span {
+  color: #3b80ed !important;
+}
 .main-home .main-content .container .row .left .main-category-list .category-item {
   max-width: 286px;
   margin-bottom: 14px;
@@ -1222,9 +1225,6 @@ header .header2 .container .header-bottom-m .mobile-menu .menu-list .menu-item .
   line-height: 21px;
   color: #2a304c;
   margin-left: 25px;
-}
-.main-home .main-content .container .row .left .main-category-list .category-item .category-title .active {
-  color: #3b80ed;
 }
 .main-home .main-content .container .row .left .main-category-list .category-item .active-drop {
   opacity: 1 !important;
@@ -1468,6 +1468,7 @@ header .header2 .container .header-bottom-m .mobile-menu .menu-list .menu-item .
   text-align: center;
 }
 .main-home .products-main-div .container .row .col-lg-3 .product-card .label-set .label-red {
+  background-image: url(/assets/images/label-red.svg);
   width: 80px !important;
   height: 80px !important;
   z-index: 5;
@@ -1506,6 +1507,7 @@ header .header2 .container .header-bottom-m .mobile-menu .menu-list .menu-item .
   font-weight: 500;
 }
 .main-home .products-main-div .container .row .col-lg-3 .product-card .label-set .label-orange {
+  background-image: url(/assets/images/ucard-sticker.png);
   width: 80px !important;
   height: 80px !important;
   z-index: 5;
@@ -2362,6 +2364,7 @@ header .header2 .container .header-bottom-m .mobile-menu .menu-list .menu-item .
   text-align: center;
 }
 .main-shop .container .content .right .row .col-xl-4 .product-card .label-set .label-red {
+  background-image: url(/assets/images/label-red.svg);
   width: 80px !important;
   height: 80px !important;
   z-index: 5;
@@ -2400,6 +2403,7 @@ header .header2 .container .header-bottom-m .mobile-menu .menu-list .menu-item .
   font-weight: 500;
 }
 .main-shop .container .content .right .row .col-xl-4 .product-card .label-set .label-orange {
+  background-image: url(/assets/images/ucard-sticker.png);
   width: 80px !important;
   height: 80px !important;
   z-index: 5;
@@ -2745,6 +2749,7 @@ header .header2 .container .header-bottom-m .mobile-menu .menu-list .menu-item .
   text-align: center;
 }
 .main-detail .item-info .container .content .item-content .left .product-card .label-set .label-red {
+  background-image: url(/assets/images/label-red.svg);
   width: 80px !important;
   height: 80px !important;
   z-index: 5;
@@ -2784,6 +2789,7 @@ header .header2 .container .header-bottom-m .mobile-menu .menu-list .menu-item .
   font-weight: 500;
 }
 .main-detail .item-info .container .content .item-content .left .product-card .label-set .label-orange {
+  background-image: url(/assets/images/ucard-sticker.png);
   width: 80px !important;
   height: 80px !important;
   z-index: 5;
@@ -3744,6 +3750,7 @@ header .header2 .container .header-bottom-m .mobile-menu .menu-list .menu-item .
   text-align: center;
 }
 .main-compare .bottom .container .content .owl-compare .item .product-card .label-set .label-red {
+  background-image: url(/assets/images/label-red.svg);
   width: 80px !important;
   height: 80px !important;
   z-index: 5;
@@ -3782,6 +3789,7 @@ header .header2 .container .header-bottom-m .mobile-menu .menu-list .menu-item .
   font-weight: 500;
 }
 .main-compare .bottom .container .content .owl-compare .item .product-card .label-set .label-orange {
+  background-image: url(/assets/images/ucard-sticker.png);
   width: 80px !important;
   height: 80px !important;
   z-index: 5;
@@ -6004,6 +6012,7 @@ header .header2 .container .header-bottom-m .mobile-menu .menu-list .menu-item .
   text-align: center;
 }
 .main-wishlist .bottom .container .content .main .row .col-lg-3 .product-card .label-set .label-red {
+  background-image: url(/assets/images/label-red.svg);
   width: 80px !important;
   height: 80px !important;
   z-index: 5;
@@ -6042,6 +6051,7 @@ header .header2 .container .header-bottom-m .mobile-menu .menu-list .menu-item .
   font-weight: 500;
 }
 .main-wishlist .bottom .container .content .main .row .col-lg-3 .product-card .label-set .label-orange {
+  background-image: url(/assets/images/ucard-sticker.png);
   width: 80px !important;
   height: 80px !important;
   z-index: 5;
@@ -6325,6 +6335,7 @@ header .header2 .container .header-bottom-m .mobile-menu .menu-list .menu-item .
   text-align: center;
 }
 .main-outlet .bottom .container .content .main .row .col-lg-3 .product-card .label-set .label-red {
+  background-image: url(/assets/images/label-red.svg);
   width: 80px !important;
   height: 80px !important;
   z-index: 5;
@@ -6363,6 +6374,7 @@ header .header2 .container .header-bottom-m .mobile-menu .menu-list .menu-item .
   font-weight: 500;
 }
 .main-outlet .bottom .container .content .main .row .col-lg-3 .product-card .label-set .label-orange {
+  background-image: url(/assets/images/ucard-sticker.png);
   width: 80px !important;
   height: 80px !important;
   z-index: 5;
