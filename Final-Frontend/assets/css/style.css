@@ -7472,38 +7472,50 @@ footer #footer .footer-lang .section-wrapper .owner {
   width: 100%;
 }
 
-.modal-dialog {
+.main-modal-dialog {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.main-modal-dialog .modal-dialog {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: calc(100vh - 60px);
+  height: 95%;
   margin: 30px auto;
-  width: calc(100% - 170px);
+  width: calc(100vw - 170px);
   max-width: 1270px;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  overflow: auto;
 }
-.modal-dialog .modal-content {
+.main-modal-dialog .modal-dialog .modal-content {
   border-radius: 24px;
   padding: 80px 80px 100px;
   position: relative;
   border: none;
   display: flex;
   flex-direction: column;
+  height: 100%;
   width: 100%;
   pointer-events: auto;
+  overflow: auto;
   background-color: #fff;
   background-clip: padding-box;
 }
-.modal-dialog .modal-content .modal-header {
+.main-modal-dialog .modal-dialog .modal-content .modal-header {
   flex-direction: column;
   align-items: center;
   border: none;
   margin-bottom: 95px;
 }
-.modal-dialog .modal-content .modal-header h3 {
+.main-modal-dialog .modal-dialog .modal-content .modal-header h3 {
   font-size: 32px;
   font-weight: 800;
   letter-spacing: normal;
@@ -7514,7 +7526,7 @@ footer #footer .footer-lang .section-wrapper .owner {
   text-align: center;
   margin-bottom: 32px;
 }
-.modal-dialog .modal-content .modal-header p {
+.main-modal-dialog .modal-dialog .modal-content .modal-header p {
   font-size: 28px;
   font-weight: 700;
   letter-spacing: 0.04px;
@@ -7524,23 +7536,23 @@ footer #footer .footer-lang .section-wrapper .owner {
   line-height: normal;
   text-align: center;
 }
-.modal-dialog .modal-content .modal-header button {
+.main-modal-dialog .modal-dialog .modal-content .modal-header button {
   position: absolute;
   right: 35px;
   top: 35px;
   opacity: 1;
   border: 0;
 }
-.modal-dialog .modal-content .modal-header button i {
+.main-modal-dialog .modal-dialog .modal-content .modal-header button i {
   font-size: 30px;
   pointer-events: none;
 }
-.modal-dialog .modal-content .modal-body {
+.main-modal-dialog .modal-dialog .modal-content .modal-body {
   position: relative;
   flex: 1 1 auto;
   padding: 0;
 }
-.modal-dialog .modal-content .modal-body h3 {
+.main-modal-dialog .modal-dialog .modal-content .modal-body h3 {
   margin-bottom: 55px;
   font-weight: 700;
   font-size: 32px;
@@ -7550,27 +7562,27 @@ footer #footer .footer-lang .section-wrapper .owner {
   font-style: normal;
   line-height: normal;
 }
-.modal-dialog .modal-content .modal-body .payment_option {
+.main-modal-dialog .modal-dialog .modal-content .modal-body .payment_option {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 70px;
 }
-.modal-dialog .modal-content .modal-body .payment_option .img_desc {
+.main-modal-dialog .modal-dialog .modal-content .modal-body .payment_option .img_desc {
   display: flex;
   align-items: center;
   padding-right: 15px;
 }
-.modal-dialog .modal-content .modal-body .payment_option .img_desc .icon {
+.main-modal-dialog .modal-dialog .modal-content .modal-body .payment_option .img_desc .icon {
   margin-right: 50px;
 }
-.modal-dialog .modal-content .modal-body .payment_option .img_desc .icon img {
+.main-modal-dialog .modal-dialog .modal-content .modal-body .payment_option .img_desc .icon img {
   width: 100%;
   height: 100%;
   -o-object-fit: contain;
   object-fit: contain;
 }
-.modal-dialog .modal-content .modal-body .payment_option .img_desc .desc {
+.main-modal-dialog .modal-dialog .modal-content .modal-body .payment_option .img_desc .desc {
   font-size: 32px;
   font-weight: 700;
   font-stretch: normal;
@@ -7579,7 +7591,7 @@ footer #footer .footer-lang .section-wrapper .owner {
   letter-spacing: 0.04px;
   color: #4d595a;
 }
-.modal-dialog .modal-content .modal-body .payment_option .btn_blue {
+.main-modal-dialog .modal-dialog .modal-content .modal-body .payment_option .btn_blue {
   border-radius: 31px;
   background-color: #3b7fed;
   font-size: 20px;

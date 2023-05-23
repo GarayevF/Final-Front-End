@@ -8219,126 +8219,139 @@ footer{
     width: 100%;
 }
 
-.modal-dialog{
+.main-modal-dialog{
+    
     display: flex;
-    align-items: center;
     justify-content: center;
-    min-height: calc(100vh - 60px);
-    margin: 30px auto;
-    width: calc(100% - 170px);
-    max-width: 1270px;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    .modal-content{
-        border-radius: 24px;
-        padding: 80px 80px 100px;
-        position: relative;
-        border: none;
+    align-items: center;
+    z-index: 9999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
+    background-color: rgba(0,0,0,.5);
+    .modal-dialog{
         display: flex;
-        flex-direction: column;
-        width: 100%;
-        pointer-events: auto;
-        background-color: #fff;
-        background-clip: padding-box;
-        .modal-header{
-            flex-direction: column;
-            align-items: center;
-            border: none;
-            margin-bottom: 95px;
-            h3{
-                font-size: 32px;
-                font-weight: 800;
-                letter-spacing: normal;
-                color: #3b7fed;
-                font-stretch: normal;
-                font-style: normal;
-                line-height: normal;
-                text-align: center;
-                margin-bottom: 32px;
-            }
-            p{
-                font-size: 28px;
-                font-weight: 700;
-                letter-spacing: .04px;
-                color: #555970;
-                font-stretch: normal;
-                font-style: normal;
-                line-height: normal;
-                text-align: center;
-            }
-            button{
-                position: absolute;
-                right: 35px;
-                top: 35px;
-                opacity: 1;
-                border: 0;
-                i{
-                    font-size: 30px;
-                    pointer-events: none;
-                }
-            }
-        }
-        .modal-body{
+        align-items: center;
+        justify-content: center;
+        height: 95%;
+        margin: 30px auto;
+        width: calc(100vw - 170px);
+        max-width: 1270px;
+        overflow: auto;
+        .modal-content{
+            border-radius: 24px;
+            padding: 80px 80px 100px;
             position: relative;
-            flex: 1 1 auto;
-            padding: 0;
-            h3{
-                margin-bottom: 55px;
-                font-weight: 700;
-                font-size: 32px;
-                letter-spacing: normal;
-                color: #3b7fed;
-                font-stretch: normal;
-                font-style: normal;
-                line-height: normal;
-            }
-            .payment_option{
-                display: flex;
+            border: none;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            width: 100%;
+            pointer-events: auto;
+            overflow: auto;
+            background-color: #fff;
+            background-clip: padding-box;
+            .modal-header{
+                flex-direction: column;
                 align-items: center;
-                justify-content: space-between;
-                margin-bottom: 70px;
-                .img_desc{
-                    display: flex;
-                    align-items: center;
-                    padding-right: 15px;
-                    .icon{
-                        margin-right: 50px;
-                        img{
-                            width: 100%;
-                            height: 100%;
-                            -o-object-fit: contain;
-                            object-fit: contain;
-                        }
-                    }
-                    .desc{
-                        font-size: 32px;
-                        font-weight: 700;
-                        font-stretch: normal;
-                        font-style: normal;
-                        line-height: normal;
-                        letter-spacing: .04px;
-                        color: #4d595a;
-                    }
-                    
-                }
-                .btn_blue{
-                    border-radius: 31px;
-                    background-color: #3b7fed;
-                    font-size: 20px;
-                    font-weight: 600;
+                border: none;
+                margin-bottom: 95px;
+                h3{
+                    font-size: 32px;
+                    font-weight: 800;
+                    letter-spacing: normal;
+                    color: #3b7fed;
                     font-stretch: normal;
                     font-style: normal;
-                    line-height: 18px;
-                    letter-spacing: normal;
+                    line-height: normal;
                     text-align: center;
-                    color: #fff;
-                    padding: 17px;
-                    width: 100%;
-                    max-width: 274px;
+                    margin-bottom: 32px;
+                }
+                p{
+                    font-size: 28px;
+                    font-weight: 700;
+                    letter-spacing: .04px;
+                    color: #555970;
+                    font-stretch: normal;
+                    font-style: normal;
+                    line-height: normal;
+                    text-align: center;
+                }
+                button{
+                    position: absolute;
+                    right: 35px;
+                    top: 35px;
+                    opacity: 1;
                     border: 0;
-                    border: 0;
+                    i{
+                        font-size: 30px;
+                        pointer-events: none;
+                    }
+                }
+            }
+            .modal-body{
+                position: relative;
+                flex: 1 1 auto;
+                padding: 0;
+                h3{
+                    margin-bottom: 55px;
+                    font-weight: 700;
+                    font-size: 32px;
+                    letter-spacing: normal;
+                    color: #3b7fed;
+                    font-stretch: normal;
+                    font-style: normal;
+                    line-height: normal;
+                }
+                .payment_option{
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    margin-bottom: 70px;
+                    .img_desc{
+                        display: flex;
+                        align-items: center;
+                        padding-right: 15px;
+                        .icon{
+                            margin-right: 50px;
+                            img{
+                                width: 100%;
+                                height: 100%;
+                                -o-object-fit: contain;
+                                object-fit: contain;
+                            }
+                        }
+                        .desc{
+                            font-size: 32px;
+                            font-weight: 700;
+                            font-stretch: normal;
+                            font-style: normal;
+                            line-height: normal;
+                            letter-spacing: .04px;
+                            color: #4d595a;
+                        }
+                        
+                    }
+                    .btn_blue{
+                        border-radius: 31px;
+                        background-color: #3b7fed;
+                        font-size: 20px;
+                        font-weight: 600;
+                        font-stretch: normal;
+                        font-style: normal;
+                        line-height: 18px;
+                        letter-spacing: normal;
+                        text-align: center;
+                        color: #fff;
+                        padding: 17px;
+                        width: 100%;
+                        max-width: 274px;
+                        border: 0;
+                        border: 0;
+                    }
                 }
             }
         }

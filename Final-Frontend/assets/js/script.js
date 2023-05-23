@@ -2,35 +2,25 @@ $(document).ready(function() {
     var pathParts = window.location.pathname.split('/')
     var thirdPart = pathParts.length >=3
 
-    
-    if((thirdPart && window.location.pathname.split('/')[2].toLowerCase() == 'profile')){
+    console.log(window.location.pathname.split('/')[1].toLowerCase());
+
+    if(( window.location.pathname.split('/')[1].toLowerCase() == 'profile.html')){
         $('#phone').inputmask("\\+\\9\\9\\4 (99) 999 99 99", { "escapeChar": "\\" });
         $('#phone2').inputmask("\\+\\9\\9\\4 (99) 999 99 99", { "escapeChar": "\\" });
     }
     
-    if((thirdPart && window.location.pathname.split('/')[2].toLowerCase() == 'checkout')){
+    if((window.location.pathname.split('/')[1].toLowerCase() == 'checkout.html')){
         $('#phone3').inputmask("\\+\\9\\9\\4 (99) 999 99 99", { "escapeChar": "\\" });
     }
 
-    if((thirdPart && window.location.pathname.split('/')[1].toLowerCase() == 'product') &&
-    (thirdPart && window.location.pathname.split('/')[2].toLowerCase() == 'detail')){
+    if((window.location.pathname.split('/')[1].toLowerCase() == 'product-detail.html')){
+        console.log('true');
         $('.buy-taksit-btn').on('click', function() {
-            $('.modal-dialog').addClass('d-none')
+            $('.main-modal-dialog').removeClass('d-none')
         })
 
         $('.close-modal').on('click', function() {
-            $('.modal-dialog').removeClass('d-none')
-        })
-    }
-
-    if((thirdPart && window.location.pathname.split('/')[1].toLowerCase() == 'product-detail')){
-        
-        $('.buy-taksit-btn').on('click', function() {
-            $('.modal-dialog').addClass('d-none')
-        })
-
-        $('.close-modal').on('click', function() {
-            $('.modal-dialog').removeClass('d-none')
+            $('.main-modal-dialog').addClass('d-none')
         })
     }
 
